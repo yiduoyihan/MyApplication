@@ -21,30 +21,30 @@ struct AboutPage {
       this.Title()
 
       Text('测试数据传递')
-      .fontSize(30)
-      .fontColor('#ffa70e0e')
-        .onClick(()=>{
+        .fontSize(30)
+        .fontColor('#ffa70e0e')
+        .onClick(() => {
           router.pushUrl({
-            url:"pages/PageCreate"
+            url: "pages/PageCreate"
           })
         })
 
       Button('条件测试')
-      .onClick(() => {
-        //跳转的操作
-        router.pushUrl({
-          //右键pages目录，创建，page页面，创建出来的页面直接在main_pages.json里面配置好了
-          //新页面需要再resources/base/profile/main_pages.json里面配置路径
-          //跳转不能用/pages/TestPage作为url
-          url:'pages/TestPage'
+        .onClick(() => {
+          //跳转的操作
+          router.pushUrl({
+            //右键pages目录，创建，page页面，创建出来的页面直接在main_pages.json里面配置好了
+            //新页面需要再resources/base/profile/main_pages.json里面配置路径
+            //跳转不能用/pages/TestPage作为url
+            url: 'pages/TestPage'
+          })
         })
-      })
 
       Button('WatchComponent')
         .onClick(() => {
           //跳转的操作
           router.pushUrl({
-            url:'pages/WatchComponent'
+            url: 'pages/WatchComponent'
           })
         })
 
@@ -52,7 +52,15 @@ struct AboutPage {
         .onClick(() => {
           //跳转的操作
           router.pushUrl({
-            url:'pages/ForeachPage'
+            url: 'pages/ForeachPage'
+          })
+        })
+
+      Button('生命周期')
+        .onClick(() => {
+          //跳转的操作
+          router.pushUrl({
+            url: 'pages/LifecyclePage'
           })
         })
 
@@ -85,7 +93,7 @@ struct AboutPage {
                 LogoAndVersionComponent()
               }
               .layoutWeight(this.currentBreakPoint === CommonConstants.BREAK_POINT_LG ?
-                CommonConstants.ROW_LG_WEIGHT : CommonConstants.ROW_WEIGHT)
+              CommonConstants.ROW_LG_WEIGHT : CommonConstants.ROW_WEIGHT)
 
               Flex({
                 direction: FlexDirection.Column,
@@ -98,7 +106,7 @@ struct AboutPage {
                 TechSupportComponent()
               }
               .layoutWeight(this.currentBreakPoint === CommonConstants.BREAK_POINT_LG ?
-                CommonConstants.FLEX_LG_WEIGHT : CommonConstants.FLEX_WEIGHT)
+              CommonConstants.FLEX_LG_WEIGHT : CommonConstants.FLEX_WEIGHT)
             }
           }
         }

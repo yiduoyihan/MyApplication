@@ -32,4 +32,15 @@ struct TestPage {
       router.back()
     })
   }
+  onPageShow() {
+    console.log('LOG1:', '--------onPageShow')
+  }
+
+  onPageHide() {
+    console.log('LOG1:', '--------onPageHide')
+  }
+
+  onBackPress() {
+    console.log('LOG1:', '--------onBackPress')
+  }
 }
