@@ -20,6 +20,44 @@ struct AboutPage {
     Column() {
       this.Title()
 
+      Text('测试数据传递')
+      .fontSize(30)
+      .fontColor('#ffa70e0e')
+        .onClick(()=>{
+          router.pushUrl({
+            url:"pages/PageCreate"
+          })
+        })
+
+      Button('条件测试')
+      .onClick(() => {
+        //跳转的操作
+        router.pushUrl({
+          //右键pages目录，创建，page页面，创建出来的页面直接在main_pages.json里面配置好了
+          //新页面需要再resources/base/profile/main_pages.json里面配置路径
+          //跳转不能用/pages/TestPage作为url
+          url:'pages/TestPage'
+        })
+      })
+
+      Button('WatchComponent')
+        .onClick(() => {
+          //跳转的操作
+          router.pushUrl({
+            url:'pages/WatchComponent'
+          })
+        })
+
+      Button('Foreach')
+        .onClick(() => {
+          //跳转的操作
+          router.pushUrl({
+            url:'pages/ForeachPage'
+          })
+        })
+
+      // Toggle("toggle")
+
       Scroll() {
         GridRow({
           columns: {

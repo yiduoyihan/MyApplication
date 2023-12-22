@@ -3,6 +3,10 @@
     "pages/AboutPage",
     "pages/AgreementPage",
     "pages/PrivacyPage",
-    "pages/DetailPage"
+    "pages/TestPage",
+    "pages/DetailPage",
+    "pages/PageCreate",
+    "pages/WatchComponent",
+    "pages/ForeachPage"
   ]
 }
