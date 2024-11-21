@@ -21,4 +21,19 @@ export class ListItemData {
    * Indicates list item summary.
    */
   summary: Resource;
+
+  /**
+   * Constructor for ListItemData.
+   * @param id - Unique id for the list item.
+   * @param title - Title of the list item.
+   * @param icon - Icon of the list item.
+   * @param summary - Summary of the list item.
+   */
+  constructor(id: number, title: Resource, icon: Resource, summary: Resource) {
+    this.id = id;
+    this.title = title;
+    this.icon = icon;
+    this.summary = summary;
+  }
+
 }

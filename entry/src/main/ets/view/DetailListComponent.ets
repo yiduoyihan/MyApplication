@@ -6,7 +6,7 @@ import { ListItemData } from '../common/bean/ListItemData';
  */
 @Component
 export struct DetailListComponent {
-  private detailList: Array<ListItemData>;
+  private detailList: Array<ListItemData> =[];
 
   build() {
     Column() {
@@ -25,7 +25,7 @@ export struct DetailListComponent {
             .width(CommonConstants.ROW_WIDTH_PERCENT)
             .height($r('app.float.list_height'))
           }
-        }, (listItemData, index) => index + JSON.stringify(listItemData))
+        }, (listItemData:ListItemData, index) => index + JSON.stringify(listItemData))
       }
       .divider({
         strokeWidth: $r('app.float.divider_stroke_width'),

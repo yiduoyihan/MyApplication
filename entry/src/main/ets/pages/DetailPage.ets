@@ -1,8 +1,10 @@
+
 import router from '@ohos.router';
 import { DetailListComponent } from '../view/DetailListComponent';
 import { CommonConstants } from '../common/constants/CommonConstants';
 import { ListItemData } from '../common/bean/ListItemData';
 import AboutViewModel from '../viewmodel/AboutViewModel';
+import { resourceManager } from '@kit.LocalizationKit';
 
 /**
  * Detail page. Click the item on about page to jump to the detail page.
@@ -10,15 +12,22 @@ import AboutViewModel from '../viewmodel/AboutViewModel';
 @Entry
 @Component
 struct DetailPage {
-  private titleParam: Resource = $r('app.string.detail_default_title');
-  private dataParam: Array<ListItemData> = AboutViewModel.getDefaultDetailInfo();
+  private defaultTitle: Resource = $r('app.string.detail_default_title');
+  private defaultData: Array<ListItemData> = AboutViewModel.getDefaultDetailInfo();
+  private pageTitle: Resource = this.defaultTitle;
+  private pageData: Array<ListItemData> = this.defaultData;
 
-  aboutToAppear() {
-    if (router.getParams()) {
-      this.titleParam = router.getParams()[CommonConstants.KEY_PARAM_TITLE] as Resource;
-      this.dataParam = router.getParams()[CommonConstants.KEY_PARAM_DATA] as Array<ListItemData>;
-    }
-  }
+  // aboutToAppear() {
+  //   try {
+  //     const params = router.getParams();
+  //     if (params && params[CommonConstants.KEY_PARAM_TITLE] && params[CommonConstants.KEY_PARAM_DATA]) {
+  //       this.pageTitle = params[CommonConstants.KEY_PARAM_TITLE] as Resource;
+  //       this.pageData = params[CommonConstants.KEY_PARAM_DATA] as Array<ListItemData>;
+  //     }
+  //   } catch (error) {
+  //     console.error('Error in aboutToAppear:', error);
+  //   }
+  // }
 
   build() {
     Column() {
@@ -44,7 +53,7 @@ struct DetailPage {
             lg: CommonConstants.OFFSET_LG
           }
         }) {
-          DetailListComponent({ detailList: this.dataParam })
+          DetailListComponent({ detailList: this.pageData })
         }
       }
       .margin({
@@ -57,7 +66,7 @@ struct DetailPage {
     .backgroundColor($r('app.color.page_background'))
   }
 
-   @Builder Title() {
+  @Builder Title() {
     Row() {
       Image($r('app.media.ic_back'))
         .width($r('app.float.image_size'))
@@ -70,7 +79,7 @@ struct DetailPage {
           router.back();
         })
 
-      Text(this.titleParam)
+      Text(this.pageTitle)
         .fontColor($r('app.color.title'))
         .fontSize($r('app.float.title_text_font_size'))
     }

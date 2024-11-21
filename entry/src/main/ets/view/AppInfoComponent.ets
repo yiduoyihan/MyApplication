@@ -8,7 +8,7 @@ import AboutViewModel from '../viewmodel/AboutViewModel';
  */
 @Component
 export struct AppInfoComponent {
-  private appInfoData: Array<ListItemData>;
+  private appInfoData: Array<ListItemData> = [];
 
   build() {
     Column() {
@@ -28,7 +28,7 @@ export struct AppInfoComponent {
                 })
             }
           }
-        }, (item, index) => index + JSON.stringify(item))
+        }, (item:ListItemData, index) => index + JSON.stringify(item))
       }
     }
     .backgroundColor(Color.White)
@@ -38,7 +38,8 @@ export struct AppInfoComponent {
 
 @Component
 struct AppInfoItem {
-  private appInfoItem: ListItemData;
+  private appInfoItem: ListItemData = new ListItemData(0, $r('app.string.detail_item_title'),$r('app.string.detail_item_title'), $r('app.string.detail_item_title'));
+
 
   build() {
     Flex({

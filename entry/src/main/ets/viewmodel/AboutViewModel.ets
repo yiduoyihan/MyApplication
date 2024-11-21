@@ -12,15 +12,15 @@ class AboutViewModel {
    */
   getAppInfo(): Array<ListItemData> {
     let appInfo: Array<ListItemData> = [];
-    let aboutUsData: ListItemData = new ListItemData();
-    aboutUsData.id = CommonConstants.ABOUT_US_ID;
-    aboutUsData.title = $r('app.string.about_us');
-    aboutUsData.icon = $r('app.media.ic_arrow');
+    let aboutUsData: ListItemData = new ListItemData(CommonConstants.ABOUT_US_ID,$r('app.string.about_us'), $r('app.media.ic_arrow'),$r('app.string.home_weblink'));
+    // aboutUsData.id = CommonConstants.ABOUT_US_ID;
+    // aboutUsData.title = $r('app.string.about_us');
+    // aboutUsData.icon = $r('app.media.ic_arrow');
     appInfo.push(aboutUsData);
-    let contactData: ListItemData = new ListItemData();
-    contactData.id = CommonConstants.CONTACT_ID;
-    contactData.title = $r('app.string.contact_customer_service');
-    contactData.icon = $r('app.media.ic_arrow');
+    let contactData: ListItemData = new ListItemData(CommonConstants.CONTACT_ID,$r('app.string.contact_customer_service'), $r('app.media.ic_arrow'),$r('app.string.home_weblink'));
+    // contactData.id = CommonConstants.CONTACT_ID;
+    // contactData.title = $r('app.string.contact_customer_service');
+    // contactData.icon = $r('app.media.ic_arrow');
     appInfo.push(contactData);
     return appInfo;
   }
@@ -32,13 +32,13 @@ class AboutViewModel {
    */
   getAboutUsInfo(): Array<ListItemData> {
     let aboutUsInfo: Array<ListItemData> = [];
-    let officialWeb: ListItemData = new ListItemData();
-    officialWeb.title = $r('app.string.home_page');
-    officialWeb.summary = $r('app.string.home_weblink');
+    let officialWeb: ListItemData = new ListItemData(0,$r('app.string.home_page'), $r('app.media.icon'),$r('app.string.home_weblink'));
+    // officialWeb.title = $r('app.string.home_page');
+    // officialWeb.summary = $r('app.string.home_weblink');
     aboutUsInfo.push(officialWeb);
-    let publicAccount: ListItemData = new ListItemData();
-    publicAccount.title = $r('app.string.public_account');
-    publicAccount.summary = $r('app.string.account_name');
+    let publicAccount: ListItemData = new ListItemData(1,$r('app.string.public_account'), $r('app.media.icon'),$r('app.string.account_name'));
+    // publicAccount.title = $r('app.string.public_account');
+    // publicAccount.summary = $r('app.string.account_name');
     aboutUsInfo.push(publicAccount);
     return aboutUsInfo;
   }
@@ -50,13 +50,13 @@ class AboutViewModel {
    */
   getContactInfo(): Array<ListItemData> {
     let contactInfo: Array<ListItemData> = [];
-    let serviceHotline: ListItemData = new ListItemData();
-    serviceHotline.title = $r('app.string.service_hotline');
-    serviceHotline.summary = $r('app.string.hotline_number');
+    let serviceHotline: ListItemData = new ListItemData(0,$r('app.string.service_hotline'), $r('app.media.icon'),$r('app.string.hotline_number'));
+    // serviceHotline.title = $r('app.string.service_hotline');
+    // serviceHotline.summary = $r('app.string.hotline_number');
     contactInfo.push(serviceHotline);
-    let emailAddress: ListItemData = new ListItemData();
-    emailAddress.title = $r('app.string.email');
-    emailAddress.summary = $r('app.string.email_address');
+    let emailAddress: ListItemData = new ListItemData(1,$r('app.string.email'), $r('app.media.icon'),$r('app.string.email_address'));
+    // emailAddress.title = $r('app.string.email');
+    // emailAddress.summary = $r('app.string.email_address');
     contactInfo.push(emailAddress);
     return contactInfo;
   }
@@ -69,9 +69,9 @@ class AboutViewModel {
   getDefaultDetailInfo(): Array<ListItemData> {
     let defaultInfo: Array<ListItemData> = [];
     for (let i = 0; i < CommonConstants.DETAIL_DEFAULT_ROW; i++) {
-      let defaultData: ListItemData = new ListItemData();
-      defaultData.title = $r('app.string.detail_item_title');
-      defaultData.summary = $r('app.string.arrow_title');
+      let defaultData: ListItemData = new ListItemData(0,$r('app.string.detail_item_title'), $r('app.media.icon'),$r('app.string.arrow_title'));
+      // defaultData.title = $r('app.string.detail_item_title');
+      // defaultData.summary = $r('app.string.arrow_title');
       defaultInfo.push(defaultData);
     }
     return defaultInfo;
